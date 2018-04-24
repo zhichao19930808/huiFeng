@@ -1111,7 +1111,7 @@ $.format = $.validator.format;
 	if (!jQuery.event.special.focusin && !jQuery.event.special.focusout && document.addEventListener) {
 		$.each({
 			focus: 'focusin',
-			blur: 'focusout'	
+			blur: 'focusout'
 		}, function( original, fix ){
 			$.event.special[fix] = {
 				setup:function() {
@@ -1143,19 +1143,5 @@ $.format = $.validator.format;
 			});
 		}
 	});
-	
-	
-	//js的方法调用
-	jQuery.validator.addMethod("isPhone", function(value, element) {
-		var length = value.length;
-		var mobile =/^d{3,4}-?d{7,9}$/;
-		//value  用户填写的值
-		//element 被校验的input标签
-		//加了this.optional(element)  不填就不验证
-		return this.optional(element) || (length == 11 && mobile.test(value));
-		}, "请正确填写您的手机号码");
 
-	
-	
-	
 })(jQuery);

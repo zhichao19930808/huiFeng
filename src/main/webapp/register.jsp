@@ -15,6 +15,13 @@
     <script>
         var result;
         $(function () {
+
+            jQuery.validator.addMethod("isPhone", function(value, element) {
+                var length = value.length;
+                var mobile = /^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/;
+                return this.optional(element) || (length == 11 && mobile.test(value));
+            }, "请填写正确的手机号码");//可以自定义默认提示信息
+
             result=$('#register').validate(
                 {
                     rules: {//根据name的属性值，指定验证规则
@@ -30,6 +37,23 @@
                         },
                         rePassword: {
                             equalTo: "#pwd"//通过id查询密码的值，进行密码确认
+                        },
+                        name: {
+                            required: true,
+                            maxlength: 4,
+                            minlength: 2
+                        },
+                        nickName: {
+                            required: true,
+                            maxlength: 10,
+                            minlength: 1
+                        },
+                        phone: {
+                            required: true,
+                            isPhone: true
+                        },
+                        IdCard: {
+                            required: true,
                         }
                     },
                     messages: {//返回的提示信息
@@ -45,6 +69,23 @@
                         },
                         rePassword: {
                             equalTo: "两次输入的密码不一致"
+                        },
+                        name:{
+                            required: '姓名必须填写',
+                            maxlength: '姓名长度不能大于4位',
+                            minlength: '姓名长度不能小于2位'
+                        },
+                        nickName:{
+                            required: '昵称必须填写',
+                            maxlength: '昵称长度不能大于10位',
+                            minlength: '昵称长度不能小于1位'
+                        },
+                        phone: {
+                            required: '手机号码必须填写',
+                            isPhone:'请输入正确的电话号码'
+                        },
+                        IdCard: {
+                            required: '身份证号码必须填写',
                         }
                     },
                     errorPlacement: function (error, element) {//提示信息存放的位置
@@ -74,6 +115,36 @@
         <tr>
             <td>
                 <input type="password" name="rePassword" placeholder="确认密码">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="name" placeholder="请输入您的姓名">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="nickName" placeholder="请输入您的昵称">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="phone" placeholder="请输入您的电话号码">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="IdCard" placeholder="请输入您的身份证号码">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="birthday" placeholder="出生日期">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="sex" placeholder="性别">
             </td>
         </tr>
     </table>
