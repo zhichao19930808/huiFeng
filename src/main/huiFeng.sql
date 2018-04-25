@@ -15,3 +15,4 @@ CREATE TABLE user(
 )COMMENT '用户表';
 SELECT *
 FROM user;
+
