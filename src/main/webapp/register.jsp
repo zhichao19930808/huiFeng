@@ -6,6 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
 <html>
 <head>
     <script src="js/jquery-1.9.1.min.js"></script>
@@ -100,16 +105,16 @@
 </head>
 
 <body>
-<form action="#" id="register">
+<form action="<%=basePath%>user/register" id="register">
     <table>
         <tr>
             <td>
-                <input type="text" name="loginName" placeholder="登陆账号">
+                <input type="text" name="user.loginName" placeholder="登陆账号">
             </td>
         </tr>
         <tr>
             <td>
-                <input type="password" name="password" id="pwd" placeholder="密码">
+                <input type="password" name="user.password" id="pwd" placeholder="密码">
             </td>
         </tr>
         <tr>
@@ -119,32 +124,32 @@
         </tr>
         <tr>
             <td>
-                <input type="text" name="name" placeholder="请输入您的姓名">
+                <input type="text" name="user.name" placeholder="请输入您的姓名">
             </td>
         </tr>
         <tr>
             <td>
-                <input type="text" name="nickName" placeholder="请输入您的昵称">
+                <input type="text" name="user.nickName" placeholder="请输入您的昵称">
             </td>
         </tr>
         <tr>
             <td>
-                <input type="text" name="phone" placeholder="请输入您的电话号码">
+                <input type="text" name="user.phone" placeholder="请输入您的电话号码">
             </td>
         </tr>
         <tr>
             <td>
-                <input type="text" name="IdCard" placeholder="请输入您的身份证号码">
+                <input type="text" name="user.IdCard" placeholder="请输入您的身份证号码">
             </td>
         </tr>
         <tr>
             <td>
-                <input type="text" name="birthday" placeholder="出生日期">
+                <input type="text" name="user.birthday" placeholder="出生日期">
             </td>
         </tr>
         <tr>
             <td>
-                <input type="text" name="sex" placeholder="性别">
+                <input type="text" name="user.sex" placeholder="性别">
             </td>
         </tr>
     </table>

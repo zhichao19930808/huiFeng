@@ -110,4 +110,19 @@ public class UserEntity{
     public void setSex(int sex) {
         this.sex = sex;
     }
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "id=" + id +
+                ", loginName='" + loginName + '\'' +
+                ", name='" + name + '\'' +
+                ", nickName='" + nickName + '\'' +
+                ", password='" + password + '\'' +
+                ", phone='" + phone + '\'' +
+                ", IdCard='" + IdCard + '\'' +
+                ", birthday=" + birthday +
+                ", sex=" + sex +
+                '}';
+    }
 }
