@@ -25,7 +25,7 @@
 		<property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml"></property>
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
-	
+
 	<!-- spring扫描mapper生成接口代理的的类 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.huifeng.dao"></property>

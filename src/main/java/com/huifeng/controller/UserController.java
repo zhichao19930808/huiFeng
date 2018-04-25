@@ -13,9 +13,9 @@ public class UserController {
     @Autowired
     private UserService userService;
     @RequestMapping("/register")
-    public String register(Model model, UserEntity user) {
+    public String register(Model model,UserEntity user) {
         System.out.println(user);
         userService.addUser(user);
-        return "/index.jsp";
+        return "index";
     }
 }

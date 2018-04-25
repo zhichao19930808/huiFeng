@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.huifeng.dao.UserDao">
+
     <insert id="addUser" parameterType="com.huifeng.pojo.UserEntity">
         INSERT INTO huifeng.user( loginName, name, nickName, password, phone, IdCard, birthday, sex)
-         VALUES (#{user.loginName},#{user.name},#{user.nickName},#{user.password},#{user.phone},#{user.idCard},#{user.birthday},#{user.sex})
+         VALUES (#{loginName},#{name},#{nickName},#{password},#{phone},#{idCard},#{birthday},#{sex})
     </insert>
+
 </mapper>

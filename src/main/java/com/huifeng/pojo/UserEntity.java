@@ -1,6 +1,6 @@
 package com.huifeng.pojo;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class UserEntity{
     private  int id;
